@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 8, 79, 1) 16%,
+    rgba(0, 0, 42, 1) 37%,
+    rgba(0, 19, 54, 1) 67%,
+    rgba(1, 22, 42, 1) 100%
+  );
+  color: white;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-page {
+  padding: 40px 60px;
+  margin: 40px 60px;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.register-page:hover {
+  transform: scale(1); /* Slight scaling effect on hover */
+}
+
+.welcome-message {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.form-section {
+  margin-top: 20px;
+}
+
+.user-section-felid,
+.email-section-felid,
+.password-section-felid,
+.confirm-password-section-felid,
+.phone-section-field,
+.gender-section,
+.country-section,
+.address-section,
+.agreement-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #1e90ff; /* Light blue border on focus */
+  outline: none;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: red;
+  display: none; /* Hide error message initially */
+  animation: fadeIn 0.5s ease-in;
+}
+
+.error-message.visible {
+  display: block; /* Show error message when needed */
+}
+
+.button-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #00bfff;
+}
+
+button:active {
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

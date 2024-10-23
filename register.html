@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/register.css" />
+    <link rel="icon" type="image/x-icon" href="logo/logo.png" />
+    <!-- FontAwesome For Icons -->
+    <script
+      src="https://kit.fontawesome.com/cb104e752f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="register-page">
+      <div class="register-box-one">
+        <div class="welcome-message"><h1>Registration</h1></div>
+        <div class="welcome-message">
+          Welcome! Please complete the registration form to access all features.
+        </div>
+        <div class="form-section">
+          <form id="registrationForm" action="/">
+            <!-- Username Section -->
+            <div class="user-section">
+              <div class="user-section-felid">
+                <div class="icon">
+                  <i class="fa-solid fa-user" id="user-i"></i>
+                </div>
+                <div class="input-field">
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="User Name"
+                  />
+                </div>
+              </div>
+              <div class="err-mess-user">
+                <div class="error-message" id="usernameError"></div>
+              </div>
+            </div>
+
+            <!-- Email Section -->
+            <div class="email-section">
+              <div class="email-section-felid">
+                <div class="icon">
+                  <i class="fa-solid fa-envelope" id="email-i"></i>
+                </div>
+                <div class="email-field">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </div>
+              </div>
+              <div class="err-mess-user">
+                <div class="error-message" id="emailError"></div>
+              </div>
+            </div>
+
+            <!-- Password Section -->
+            <div class="password-section">
+              <div class="password-section-felid">
+                <div class="password-icon">
+                  <i class="fa-solid fa-lock" id="password-i"></i>
+                </div>
+                <div class="password-field">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                  <span id="toggle-icon" class="icon"
+                    ><i class="fa-solid fa-eye"></i
+                  ></span>
+                </div>
+              </div>
+              <div class="password-mess-user">
+                <div class="error-message" id="passwordError"></div>
+              </div>
+            </div>
+
+            <!-- Confirm Password Section -->
+            <div class="confirm-password-section">
+              <div class="confirm-password-section-felid">
+                <div class="confirm-password-icon">
+                  <i class="fa-solid fa-lock" id="password-i"></i>
+                </div>
+                <div class="confirm-password-field">
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                  />
+                  <span id="toggle-icon-two" class="icon"
+                    ><i class="fa-solid fa-eye"></i
+                  ></span>
+                </div>
+              </div>
+              <div class="confirmpassword-mess-user">
+                <div class="error-message" id="confirmPasswordError"></div>
+              </div>
+            </div>
+
+            <!-- Phone Number Section -->
+            <div class="phone-section">
+              <div class="phone-section-field">
+                <div class="icon">
+                  <i class="fa-solid fa-phone" id="phone-i"></i>
+                </div>
+                <div class="input-field">
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone Number"
+                  />
+                </div>
+              </div>
+              <div class="err-mess-user">
+                <div class="error-message" id="phoneError"></div>
+              </div>
+            </div>
+
+            <!-- Gender Section with Radio Buttons -->
+            <div class="gender-section">
+              <div>
+                <label>
+                  <input type="radio" name="gender" value="male" />
+                  Male
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="female" />
+                  Female
+                </label>
+                <label>
+                  <input type="radio" name="gender" value="other" />
+                  Other
+                </label>
+              </div>
+              <div class="err-mess-user">
+                <div class="error-message" id="genderError"></div>
+              </div>
+            </div>
+
+            <!-- Country Section as a Dropdown -->
+            <div class="country-section">
+              <label for="country">Country:</label>
+              <select id="country" name="country">
+                <option value="">Select a country</option>
+                <option value="IN">India</option>
+                <option value="ZW">Zimbabwe</option>
+                <option value="AU">Australia</option>
+                <option value="NZ">New Zealand</option>
+              </select>
+
+              <div class="err-mess-user">
+                <div class="error-message" id="countryError"></div>
+              </div>
+            </div>
+
+            <!-- Address Section -->
+            <div class="address-section">
+              <div class="address-section-field">
+                <textarea
+                  id="address"
+                  name="address"
+                  placeholder="Address"
+                  rows="10"
+                  cols="30"
+                ></textarea>
+              </div>
+              <div class="err-mess-user">
+                <div class="error-message" id="addressError"></div>
+              </div>
+            </div>
+
+            <!-- Agreement Policy Section -->
+            <div class="agreement-section">
+              <label>
+                <input type="checkbox" id="agree" name="agree" required />
+                I agree to the
+                <a href="#">Terms of Service</a>
+                and
+                <a href="#">Privacy Policy</a>.
+              </label>
+              <div class="err-mess-user">
+                <div class="error-message" id="agreementError"></div>
+              </div>
+            </div>
+            <!-- Submit Button -->
+            <div class="button-section">
+              <button type="submit" id="registerBtn">Register</button>
+              <button type="reset" id="resetBtn">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/register.js"></script>
+  </body>
+</html>
