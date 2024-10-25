@@ -26,6 +26,8 @@ toggleIcon2.addEventListener("click", () => {
       : '<i class="fa-solid fa-eye-slash"></i>';
 });
 
+//! Form validation
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("registrationForm");
   const username = document.getElementById("username");

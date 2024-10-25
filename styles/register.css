@@ -1,33 +1,210 @@
+/* Universal Reset and Box-Sizing */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 8, 79, 1) 16%,
-    rgba(0, 0, 42, 1) 37%,
-    rgba(0, 19, 54, 1) 67%,
-    rgba(1, 22, 42, 1) 100%
-  );
-  color: white;
-  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, rgb(15, 15, 107) 0%, rgb(31, 97, 6) 100%);
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #f0f0f0;
 }
+.icon {
+  padding: 12px;
+  color: aqua;
+  background: blueviolet;
+  border-start-start-radius: 1ch;
+  border-bottom-left-radius: 1ch;
+}
+/* Register Page Container */
 
-.register-page {
-  padding: 40px 60px;
-  margin: 40px 60px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
+.gender-section-field {
+  gap: 10px;
 }
 #registrationForm {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.register-page {
+  padding: 50px 40px;
+  margin: 40px 375px;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.register-page:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Welcome Message Animation */
+.welcome-message {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeInSlide 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: 2px solid #00b4d8 !important;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 12px rgba(0, 180, 216, 0.5);
+}
+
+/* Error Styling */
+.error-message {
+  color: #ff4d4f;
+  font-size: 14px;
+  display: none;
+  margin-top: 5px;
+}
+
+.error-message.visible {
+  display: block;
+  animation: shake 0.3s ease;
+}
+
+/* Password Toggle Icon */
+.tog-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  cursor: pointer;
+}
+
+.tog-icon:hover {
+  color: #00b4d8;
+}
+
+/* Buttons */
+.button-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #2b2d2e;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #484b4d;
+  transform: scale(1.05);
+}
+.textarea {
+  width: 100%;
+}
+.address-section {
+  flex: 1;
+}
+/* Animation for Errors */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+textarea {
+  resize: none;
+}
+.user-section-felid,
+.email-section-felid,
+.password-section-felid,
+.confirm-password-section-felid,
+.phone-section-field,
+.gender-section-field,
+.country-section-field,
+.address-section-field,
+.agreement-section-feild {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+option {
+  background-color: #0e0c0c;
+  cursor: pointer;
+}
+.gender-section-field label input:hover {
+  cursor: pointer;
+}
+.password-section,
+.confirm-password-section {
+  position: relative;
+}
+
+.password-field,
+.confirm-password-field {
   position: relative;
 }
 
@@ -36,100 +213,4 @@ body {
 .password-field,
 .confirm-password-field {
   flex: 1;
-}
-.tog-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.welcome-message {
-  font-size: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  animation: fadeIn 0.5s ease-in;
-}
-
-.form-section {
-  margin-top: 20px;
-}
-
-.user-section-felid,
-.email-section-felid,
-.password-section-felid,
-.confirm-password-section-felid,
-.phone-section-field,
-.gender-section-field,
-.country-section-field,
-.address-section,
-.agreement-section-field {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.password-section,
-.confirm-password-section {
-  position: relative;
-}
-.icon {
-  margin-right: 10px;
-}
-.password-field,
-.confirm-password-field {
-  position: relative;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-textarea,
-select {
-  width: 100% !important;
-  padding: 10px;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: #1e90ff; /* Light blue border on focus */
-  outline: none;
-}
-
-.error {
-  border: 2px solid red;
-}
-
-.error-message {
-  color: red;
-  display: none;
-  animation: fadeIn 0.3s ease-in;
-}
-
-.error-message.visible {
-  display: block;
-}
-
-.button-section {
-  display: flex;
-  justify-content: space-between;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-  }
 }
