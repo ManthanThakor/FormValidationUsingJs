@@ -34,8 +34,7 @@ body {
 .register-page {
   padding: 50px 40px;
   margin: 40px 375px;
-
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(82, 20, 20, 0.151);
   border-radius: 12px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
