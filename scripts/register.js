@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const phone = document.getElementById("phone");
   const country = document.getElementById("country");
   const agreement = document.getElementById("agree");
+  const genderInputs = document.getElementsByName("gender");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -84,9 +85,24 @@ document.addEventListener("DOMContentLoaded", () => {
       isValid = false;
     }
 
+    // Gender validation
+    const genderSelected = Array.from(genderInputs).some(
+      (input) => input.checked
+    );
+    if (!genderSelected) {
+      showError(
+        document.getElementById("genderError"),
+        "Please select a gender."
+      );
+      isValid = false;
+    }
+
     // Agreement validation
     if (!agreement.checked) {
-      showError(agreement, "You must agree to the terms and conditions.");
+      showError(
+        document.getElementById("agreementError"),
+        "You must agree to the terms and conditions."
+      );
       isValid = false;
     }
 
@@ -95,11 +111,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function showError(input, message) {
-    const errorMessage = document.getElementById(`${input.name}Error`);
-    errorMessage.textContent = message;
-    errorMessage.classList.add("visible");
-    input.classList.add("error");
+  function showError(element, message) {
+    if (element.tagName === "INPUT" || element.tagName === "SELECT") {
+      const errorMessage = document.getElementById(`${element.name}Error`);
+      errorMessage.textContent = message;
+      errorMessage.classList.add("visible");
+      element.classList.add("error");
+    } else {
+      element.textContent = message;
+      element.classList.add("visible");
+    }
   }
 
   function clearErrorMessages() {

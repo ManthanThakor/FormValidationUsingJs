@@ -22,15 +22,26 @@ body {
 .register-page {
   padding: 40px 60px;
   margin: 40px 60px;
-
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
 }
+#registrationForm {
+  position: relative;
+}
 
-.register-page:hover {
-  transform: scale(1); /* Slight scaling effect on hover */
+.input-field,
+.email-field,
+.password-field,
+.confirm-password-field {
+  flex: 1;
+}
+.tog-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .welcome-message {
@@ -49,17 +60,25 @@ body {
 .password-section-felid,
 .confirm-password-section-felid,
 .phone-section-field,
-.gender-section,
-.country-section,
+.gender-section-field,
+.country-section-field,
 .address-section,
-.agreement-section {
+.agreement-section-field {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 
+.password-section,
+.confirm-password-section {
+  position: relative;
+}
 .icon {
   margin-right: 10px;
+}
+.password-field,
+.confirm-password-field {
+  position: relative;
 }
 
 input[type="text"],
@@ -68,7 +87,7 @@ input[type="password"],
 input[type="tel"],
 textarea,
 select {
-  width: 100%;
+  width: 100% !important;
   padding: 10px;
   border: 2px solid #fff;
   border-radius: 5px;
@@ -90,12 +109,12 @@ select:focus {
 
 .error-message {
   color: red;
-  display: none; /* Hide error message initially */
-  animation: fadeIn 0.5s ease-in;
+  display: none;
+  animation: fadeIn 0.3s ease-in;
 }
 
 .error-message.visible {
-  display: block; /* Show error message when needed */
+  display: block;
 }
 
 .button-section {
@@ -103,29 +122,14 @@ select:focus {
   justify-content: space-between;
 }
 
-button {
-  background-color: #1e90ff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background-color: #00bfff;
-}
-
-button:active {
-}
-
-/* Animation Keyframes */
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  50% {
+    opacity: 0.7;
+  }
+  100% {
     opacity: 1;
   }
 }

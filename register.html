@@ -64,7 +64,7 @@
             <!-- Password Section -->
             <div class="password-section">
               <div class="password-section-felid">
-                <div class="password-icon">
+                <div class="icon">
                   <i class="fa-solid fa-lock" id="password-i"></i>
                 </div>
                 <div class="password-field">
@@ -74,7 +74,7 @@
                     name="password"
                     placeholder="Password"
                   />
-                  <span id="toggle-icon" class="icon"
+                  <span id="toggle-icon" class="tog-icon"
                     ><i class="fa-solid fa-eye"></i
                   ></span>
                 </div>
@@ -87,7 +87,7 @@
             <!-- Confirm Password Section -->
             <div class="confirm-password-section">
               <div class="confirm-password-section-felid">
-                <div class="confirm-password-icon">
+                <div class="icon">
                   <i class="fa-solid fa-lock" id="password-i"></i>
                 </div>
                 <div class="confirm-password-field">
@@ -97,7 +97,7 @@
                     name="confirmPassword"
                     placeholder="Confirm Password"
                   />
-                  <span id="toggle-icon-two" class="icon"
+                  <span id="toggle-icon-two" class="tog-icon"
                     ><i class="fa-solid fa-eye"></i
                   ></span>
                 </div>
@@ -129,7 +129,7 @@
 
             <!-- Gender Section with Radio Buttons -->
             <div class="gender-section">
-              <div>
+              <div class="gender-section-field">
                 <label>
                   <input type="radio" name="gender" value="male" />
                   Male
@@ -150,15 +150,18 @@
 
             <!-- Country Section as a Dropdown -->
             <div class="country-section">
-              <label for="country">Country:</label>
-              <select id="country" name="country">
-                <option value="">Select a country</option>
-                <option value="IN">India</option>
-                <option value="ZW">Zimbabwe</option>
-                <option value="AU">Australia</option>
-                <option value="NZ">New Zealand</option>
-              </select>
-
+              <div class="country-section-field">
+                <div class="icon">
+                  <i class="fa-solid fa-globe"></i>
+                </div>
+                <select id="country" name="country">
+                  <option value="">Select a country</option>
+                  <option value="IN">India</option>
+                  <option value="ZW">Zimbabwe</option>
+                  <option value="AU">Australia</option>
+                  <option value="NZ">New Zealand</option>
+                </select>
+              </div>
               <div class="err-mess-user">
                 <div class="error-message" id="countryError"></div>
               </div>
@@ -182,13 +185,16 @@
 
             <!-- Agreement Policy Section -->
             <div class="agreement-section">
-              <label>
-                <input type="checkbox" id="agree" name="agree" required />
-                I agree to the
-                <a href="#">Terms of Service</a>
-                and
-                <a href="#">Privacy Policy</a>.
-              </label>
+              <div class="agreement-section-feild">
+                <label>
+                  <input type="checkbox" id="agree" name="agree" />
+                  I agree to the
+                  <a href="#">Terms of Service</a>
+                  and
+                  <a href="#">Privacy Policy</a>.
+                </label>
+              </div>
+
               <div class="err-mess-user">
                 <div class="error-message" id="agreementError"></div>
               </div>
